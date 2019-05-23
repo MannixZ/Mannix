@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="icon" href="/static/favicon.png?v=2" type="image/x-icon" /> -->
+  <title>GODLIKE RECOMMEND</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css">
+  <!-- 
+  <link rel="stylesheet" href="http://gohttp.nie.netease.com/qard-libs/libs/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://gohttp.nie.netease.com/qard-libs/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  -->
+  <style>
+  body {
+    padding-top: 70px;
+  }
+  
+  .info-name {
+    padding-right: 1em;
+    display: inline-block;
+    width: 7em;
+    font-family: 'Courier New';
+    font-weight: 700;
+  }
+  
+  ul.device-info {
+    padding-left: 10px;
+  }
+  
+  ul.device-info > li {
+    list-style-type: none;
+  }
+  
+  div.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .image-wrapper > img {
+    border: 1px solid black;
+  }
+  
+  span.positioner {
+    position: absolute;
+    display: block;
+  }
+  
+  span.finger {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    width: 8mm;
+    height: 8mm;
+    top: -4mm;
+    left: -4mm;
+    pointer-events: none;
+    border-width: 1px;
+    border-color: #464646;
+    opacity: 0.5;
+    background-color: red;
+  }
+  
+  .halfsize {
+    -moz-transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  
+  span.success {
+    color: white;
+    background-color: green;
+    padding: 3px;
+  }
+  
+  span.failure {
+    color: white;
+    background-color: red;
+    padding: 3px;
+  }
+  </style>
+</head>
+
+<body id="app">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">网易大神推荐系统测试报告</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              用例 <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li v-for="(index, step) in steps">
+                <a href="#{{step.time}}">{{index+1}} {{step.title}}({{ step.time }}s)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        基本信息
+      </div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <ul class="device-info">
+            <li>
+              <span class="info-name">模块信息</span><a target="_blank" href={{info.testcase_url}}>{{info.module}}</a></li>
+            <li>
+              <span class="info-name">总用例数</span>{{step_count}}</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="device-info">
+            <li>
+              <span class="info-name">作者</span>{{info.author}}</li>
+            <li>
+              <span class="info-name">测试结果</span>
+              <span v-bind:class="test_result ? 'success' : 'failure'">{{test_result ? "通过": "失败"}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- steps -->
+    <div id="steps">
+      <div v-for="(index, step) in steps" class="panel" v-bind:class="step.success ? 'panel-success': 'panel-danger'">
+        <div class="panel-heading">
+          <a class="anchor" href="#{{step.time}}" name="{{step.time}}">$</a>
+          <i>{{index+1}}</i> {{step.title}} {{step.info}}({{ step.time }}s)
+        </div>
+        <div class="panel-body">
+          <template v-if="step.action == 'info'">
+            <pre>{{step.info}}</pre>
+          </template>
+          <template v-if="step.action == 'error'">
+            <pre>{{step.info}}</pre>
+          </template>
+          <template v-if="step.action == 'traceback'">
+            <pre>{{step.info}}</pre>
+          </template>
+        </div>
+      </div>
+    </div>
+    <!-- from -->
+    <blockquote>
+      <p>网易大神推荐系统测试框架，让推荐系统测试更高效</p>
+      <footer>Powered by
+        <a href="http://godlike.nie.netease.com/">
+          <cite title="">网易大神QA</cite>
+        </a>
+      </footer>
+    </blockquote>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/vue/1.0.24/vue.min.js"></script>
+<script>
+$(function() {
+  $(".panel-heading").on('click', function() {
+    $(this).next().toggle();
+  })
+
+  var json = $$data$$;
+
+  Vue.filter('displayPosition', function(pos) {
+    var x = (pos.x * 100 / this.device.display.width).toFixed(2) + '%';
+    var y = (pos.y * 100 / this.device.display.height).toFixed(2) + '%';
+    return "left: " + x + "; top: " + y + ";"
+  })
+
+  Vue.filter('translate', function(text) {
+    return {
+      assert_image_exists: '验证图片存在',
+      click_image: '点击图片',
+      assert: '验证',
+      info: '>>'
+    }[text] || text;
+  })
+
+  Vue.nextTick(function() {
+    $(".fancybox").fancybox()
+  })
+
+  new Vue({
+    el: '#app',
+    data: json,
+    computed: {
+      step_count: function() {
+        return this.steps.length;
+      },
+      test_result: function() {
+        return !this.steps.some(function(v) {
+          return v.success === false
+        })
+      }
+    }
+  })
+
+})
+</script>
+</html>

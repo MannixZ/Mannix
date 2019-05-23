@@ -1,0 +1,119 @@
+2018/12/27 20:56:30 - __main__ - INFO - 15 - do_logging - This is a log info
+2018/12/27 20:56:30 - __main__ - DEBUG - 16 - do_logging - Debugging
+2018/12/27 20:56:30 - __main__ - WARNING - 17 - do_logging - Warning exists
+2018/12/27 20:56:30 - __main__ - INFO - 18 - do_logging - Finish
+2018-12-27 21:05:32,510 - __main__ - INFO - This is a log info
+2018-12-27 21:05:32,510 - __main__ - WARNING - Warning exists
+2018-12-27 21:05:32,510 - __main__ - INFO - Finish
+2018-12-28 10:30:41,977 - __main__ - INFO - This is a log info
+2018-12-28 10:30:48,871 - __main__ - DEBUG - Debugging
+2018-12-28 10:30:51,128 - __main__ - WARNING - Warning exists
+2018-12-28 10:30:53,385 - __main__ - INFO - Finish
+2018-12-28 10:33:16,991 - __main__ - INFO - This is a log info
+2018-12-28 10:33:23,841 - __main__ - DEBUG - Debugging
+2018-12-28 10:33:26,098 - __main__ - WARNING - Warning exists
+2018-12-28 10:33:28,353 - __main__ - INFO - Finish
+2018-12-28 10:33:30,608 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/logging 模块/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2018-12-28 10:33:40,342 - __main__ - INFO - This is a log info
+2018-12-28 10:33:40,342 - __main__ - DEBUG - Debugging
+2018-12-28 10:33:40,342 - __main__ - WARNING - Warning exists
+2018-12-28 10:33:40,342 - __main__ - INFO - Finish
+2018-12-28 10:33:40,342 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/logging 模块/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2018-12-28 10:40:29,827 - __main__ - INFO - This is a log info
+2018-12-28 10:40:29,827 - __main__ - DEBUG - Debugging
+2018-12-28 10:40:29,827 - __main__ - WARNING - Warning exists
+2018-12-28 10:40:29,827 - __main__ - INFO - Finish
+2018-12-28 10:40:29,827 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/logging 模块/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2018-12-28 14:31:22,218 - __main__ - INFO - This is a log info
+2018-12-28 14:31:22,219 - __main__ - DEBUG - Debugging
+2018-12-28 14:31:22,219 - __main__ - WARNING - Warning exists
+2018-12-28 14:31:22,219 - __main__ - INFO - Finish
+2018-12-28 14:31:22,219 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/logging 模块/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2019-03-07 10:12:29,393 - __main__ - INFO - This is a log info
+2019-03-07 10:12:29,399 - __main__ - DEBUG - Debugging
+2019-03-07 10:12:29,400 - __main__ - WARNING - Warning exists
+2019-03-07 10:12:29,400 - __main__ - INFO - Finish
+2019-03-07 10:12:29,400 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/Mannix/logging_moudle/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2019-03-07 10:17:57,718 - __main__ - INFO - This is a log info
+2019-03-07 10:17:57,718 - __main__ - DEBUG - Debugging
+2019-03-07 10:17:57,718 - __main__ - WARNING - Warning exists
+2019-03-07 10:17:57,719 - __main__ - INFO - Finish
+2019-03-07 10:17:57,719 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/Mannix/logging_moudle/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2019-03-07 10:20:11,591 - __main__ - INFO - This is a log info
+2019-03-07 10:20:11,592 - __main__ - DEBUG - Debugging
+2019-03-07 10:20:11,592 - __main__ - WARNING - Warning exists
+2019-03-07 10:20:11,592 - __main__ - INFO - Finish
+2019-03-07 10:20:11,592 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/Mannix/logging_moudle/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2019-03-07 10:20:42,215 - __main__ - INFO - This is a log info
+2019-03-07 10:20:42,215 - __main__ - DEBUG - Debugging
+2019-03-07 10:20:42,215 - __main__ - WARNING - Warning exists
+2019-03-07 10:20:42,215 - __main__ - INFO - Finish
+2019-03-07 10:20:42,215 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/Mannix/logging_moudle/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2019-03-07 10:21:24,368 - __main__ - INFO - This is a log info
+2019-03-07 10:21:24,368 - __main__ - DEBUG - Debugging
+2019-03-07 10:21:24,368 - __main__ - WARNING - Warning exists
+2019-03-07 10:21:24,368 - __main__ - INFO - Finish
+2019-03-07 10:21:24,368 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/Mannix/logging_moudle/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2019-03-07 10:21:36,785 - __main__ - INFO - This is a log info
+2019-03-07 10:21:36,785 - __main__ - WARNING - Warning exists
+2019-03-07 10:21:36,785 - __main__ - INFO - Finish
+2019-03-07 10:21:36,785 - __main__ - ERROR - Faild to get result
+Traceback (most recent call last):
+  File "E:/Mannix/Mannix/logging_moudle/do_Handler.py", line 34, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2019/03/07 10:44:12 - root - INFO - 15 - do_logging - This is a log info
+2019/03/07 10:44:21 - root - INFO - 15 - do_logging - This is a log info
+Debugging
+This is a log info
+This is a log info
+Warning exists
+Finish
+This is a log info
+Warning exists
+Finish
+This is a log info
+Warning exists
+Finish
+2019-03-07 11:06:50,599 - __main__ - INFO - This is a log info
+2019-03-07 11:06:50,599 - __main__ - WARNING - Warning exists
+2019-03-07 11:06:50,599 - __main__ - INFO - Finish
+2019-03-07 11:45:48,758 - __main__ - INFO - This is a log info
+2019-03-07 11:45:48,758 - __main__ - WARNING - Warning exists
+2019-03-07 11:45:48,758 - __main__ - INFO - Finish
